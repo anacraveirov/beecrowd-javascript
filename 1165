@@ -1,0 +1,17 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+var N = parseInt(lines.shift(": "));
+
+for (var count = 0; count < N; count++ ){
+    var X = parseInt(lines.shift(": "));
+    for (var i = X; i > 1; i--){
+        if(X % i === 0 && i != X){
+            console.log(X + " nao eh primo");
+            break;
+        }
+        else if (i == 2){
+            console.log(X + " eh primo");
+        }
+    }
+}
