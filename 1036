@@ -1,0 +1,22 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var entrada = prompt("XXXXX");
+
+var [A,B,C,D] = entrada.split(" ");
+A = parseFloat(A);
+B = parseFloat(B);
+C = parseFloat(C);
+
+var R = ((B*B)-(4*A*C));
+
+if(A===0 || R<0){
+    console.log("Impossivel calcular");
+}
+else{
+    var R1 = parseFloat((-B+Math.sqrt(R))/(2*A));
+    var R2 = parseFloat((-B-Math.sqrt(R))/(2*A));
+    console.log("R1 = " + R1.toFixed(5));
+    console.log("R2 = " + R2.toFixed(5));
+}
