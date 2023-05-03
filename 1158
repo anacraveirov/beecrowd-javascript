@@ -1,0 +1,27 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var N = parseInt(prompt("Diga o número de casos"));
+var soma = 0;
+var count = 0;
+
+while(count<N){
+    var teste = prompt("Diga X e Y");
+    var [X,Y] = teste.split(" ");
+    X = parseFloat(X);
+    Y = parseFloat(Y);
+
+    var limite = X + (2*Y);
+    soma = 0;
+    
+    while(X < limite){
+        if(X % 2 !== 0){
+            soma = soma + X;
+        }
+        X++;
+    }
+    console.log( soma );
+    count++;
+}
+
