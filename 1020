@@ -1,0 +1,17 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var I = parseInt(prompt("Qual a idade em dias?"));
+
+var A = Math.floor(I / 365);
+var restoA = I % 365;
+
+var M = Math.floor(restoA / 30);
+var restoM = restoA % 30;
+
+var D = Math.floor(restoM);
+
+console.log(A + " ano(s)");
+console.log(M + " mes(es)");
+console.log(D + " dia(s)");
