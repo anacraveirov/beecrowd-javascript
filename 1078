@@ -1,0 +1,19 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var x = parseInt(prompt("Diga um número inteiro"));
+var y = 1000;
+
+if(x>2 && x<y){
+    console.log("1 x " + x + " = " + x*1);
+    console.log("2 x " + x + " = " + x*2);
+    console.log("3 x " + x + " = " + x*3);
+    console.log("4 x " + x + " = " + x*4);
+    console.log("5 x " + x + " = " + x*5);
+    console.log("6 x " + x + " = " + x*6);
+    console.log("7 x " + x + " = " + x*7);
+    console.log("8 x " + x + " = " + x*8);
+    console.log("9 x " + x + " = " + x*9);
+    console.log("10 x " + x + " = " + x*10);
+}
