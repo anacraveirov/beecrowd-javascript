@@ -1,0 +1,17 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var n = lines.shift();
+var i = 0;
+var p = 0;
+
+while(i<7){
+    i++;
+    if(n % 2 === 0){
+        p = p + 1;
+    }
+    n = lines.shift();
+}
+
+console.log(p + " valores positivos")
