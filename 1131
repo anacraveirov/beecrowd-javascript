@@ -1,0 +1,40 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var grenais = 0;
+var IV = 0;
+var GV = 0;
+var emp = 0;
+
+do{
+    var[GI, GG] = prompt().split(' ').map(Number);
+    grenais++;
+    
+    if(GI > GG){
+        IV++;
+    }
+    else if(GG > GI){
+        GV++;
+    }
+    else{
+        emp++;
+    }
+    console.log("Novo grenal (1-sim 2-nao)");
+}
+while (prompt(" ") == 1);
+
+console.log(grenais + " grenais");
+console.log("Inter:" + IV);
+console.log("Gremio:" + GV);
+console.log("Empates:" + emp);
+
+if(GV > IV){
+    console.log("Gremio venceu mais");
+}
+else if(IV > GV){
+    console.log("Inter venceu mais");
+}
+else{
+    console.log("Nao houve vencedor");
+}
