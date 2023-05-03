@@ -1,0 +1,29 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var A = parseInt(prompt("Diga A"));
+var B = parseInt(prompt("Diga B"));
+var soma = 0;
+
+if(A>B){
+    B = B + 1;
+    while(A>B){
+        if(B % 2 == 1 || B % 2 == -1){
+        soma = B + soma;
+        }
+        B++;
+    }
+}
+
+else if(B>A){
+    A = A + 1;
+    while(B>A){
+        if(A % 2 == 1 || A % 2 == -1){
+        var soma = A + soma;
+        }
+        A++;
+    }
+}
+
+console.log( soma );
