@@ -1,0 +1,30 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var A = parseInt(prompt("Qual o número?"));
+    if(A==61){
+    console.log("Brasilia")}
+else if(A==71){
+    console.log("Salvador")}
+else if(A==11){
+    console.log("Sao Paulo");
+}
+else if(A==21){
+    console.log("Rio de Janeiro");
+}
+else if(A==32){
+    console.log("Juiz de Fora");
+}
+else if(A==19){
+    console.log("Campinas");
+}
+else if(A==27){
+    console.log("Vitoria");
+}
+else if(A==31){
+    console.log("Balo Horizonte");
+}
+else{
+    console.log("DDD nao cadastrado");
+}
