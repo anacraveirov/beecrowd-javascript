@@ -1,0 +1,18 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var P = parseInt(prompt("Diga o primeiro número"));
+var S = parseInt(prompt("Diga o segundo número"));
+
+if(S<P){
+    var vira = S;
+    S = P;
+    P = vira;
+}
+
+for (P = P+1; P<S;P++){
+  if (P % 5 === 2 || P % 5 === 3){
+    console.log(P);
+  }
+}
