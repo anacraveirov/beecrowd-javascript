@@ -1,0 +1,15 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var input = prompt("Diga o número de tomadas");
+
+var [T1,T2,T3,T4] = input.split(" ");
+T1 = parseInt(T1);
+T2 = parseInt(T2);
+T3 = parseInt(T3);
+T4 = parseInt(T4);
+
+var soma = T1 + T2 + T3 + T4;
+
+console.log(soma - 3)
