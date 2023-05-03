@@ -1,0 +1,18 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var N = parseInt(prompt("Diga os números"));
+var maior = 0;
+var posicao = 0;
+
+for(count = 2; count <= 100; count++){
+    var N = parseInt(prompt("Diga os números"));
+    if(N>maior){
+        maior = N;
+        posicao = count;
+    }
+}
+
+console.log(maior);
+console.log(posicao);
