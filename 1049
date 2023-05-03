@@ -1,0 +1,39 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var T1 = prompt("Qual o primeiro tipo?");
+var T2 = prompt("Qual o segundo tipo?");
+var T3 = prompt("Qual o terceiro tipo?");
+
+if(T1=="vertebrado"){
+    if(T2=="ave"){
+        if(T3=="carnivoro"){
+            console.log("aguia");
+           }else{
+                console.log("pomba");
+            }
+    }else{
+        if(T3=="onivoro"){
+            console.log("homem");
+        }else{
+            console.log("vaca");
+            
+        }
+    }
+  }else{
+        if(T2=="inseto"){
+            if(T3=="hematofago"){
+                console.log("pulga");
+            }else{
+                console.log("lagarta");
+            }
+        }else{
+        if(T3=="hematofago"){
+                    console.log("sanguessuga");
+                }else{
+                    console.log("minhoca");
+                }
+            }
+        }
+
