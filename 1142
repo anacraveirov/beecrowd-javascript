@@ -1,0 +1,11 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var x = parseInt(prompt("Diga um número inteiro"));
+var y = 1;
+
+while(y<4*x){
+    console.log(y + " " + (y + 1) + " " + (y+2) + " PUM");
+    y = y+4;
+}
