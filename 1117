@@ -1,0 +1,19 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var N1 = parseFloat(prompt("Diga a primeira nota"));
+    var N2 = parseFloat(prompt("Diga a segunda nota"));
+
+    while(0 > N1 || 10 < N1){
+        console.log("nota invalida");
+        N1 = parseFloat(prompt("Diga a primeira nota"));
+    }
+    
+    while(0 > N2 || 10 < N2){
+       console.log("nota invalida");
+       N2 = parseFloat(prompt("Diga a segunda nota"));
+    }
+    
+    var media = (N1 + N2)/2;
+    console.log("media = " + media.toFixed(2));
