@@ -1,0 +1,37 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var N = parseInt(prompt("Diga o número de competidores"));
+var count = 0;
+
+for (let i = 0; i < N; i++) {
+  var nome = prompt("Diga o nome do competidor");
+  var GD = parseFloat(prompt("Diga a dificuldade"));
+  var notas = prompt().split(" ").map(Number);
+  var soma = 0;
+  
+  var maior = notas[0];
+  var menor = notas[0];
+  
+  for (let i = 1; i < 7; i++) {
+    menor = (menor + notas[i] - Math.abs(menor - notas[i])) / 2;
+    maior = (maior + notas[i] + Math.abs(maior - notas[i])) / 2;
+    
+    menor = parseFloat(menor.toFixed(1));
+    maior = parseFloat(maior.toFixed(1));
+  }
+  
+  notas.splice(notas.indexOf(menor), 1);
+  notas.splice(notas.indexOf(maior), 1);
+    
+    for(let value of notas){
+        soma = soma + value;
+    }
+    
+    var final = soma * GD;
+    
+    console.log( nome + " " + final.toFixed(2));
+    
+    count++;
+}
