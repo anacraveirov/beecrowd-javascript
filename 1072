@@ -1,0 +1,21 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var N = parseInt(prompt("Diga o número de casos"));
+var i = 0;
+var o = 0;
+
+for(var count = 0; count < N; count++){
+    var X = parseInt(prompt("Diga X"));
+    if(X>10 && X<20){
+        o++;
+    }
+    else{
+        i++;
+    }
+    X = lines.shift();
+}
+
+console.log(i + " in");
+console.log(o + " out");
