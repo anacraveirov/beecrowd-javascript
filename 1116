@@ -1,0 +1,23 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();}
+
+var N = parseInt(prompt("Diga o número de casos"));
+
+for(var i = 0; i < N; i ++){
+    
+    var V = prompt("Diga as notas");
+    
+    var [a,b] = V.split(" ");
+    a = parseFloat(a);
+    b = parseFloat(b);
+    
+    div = a/b;
+    
+    if(b === 0){
+        console.log("divisao impossivel");
+    }
+    else{
+        console.log(div.toFixed(1));
+    }
+}
