@@ -1,0 +1,36 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+var prompt = function(texto) { return lines.shift();};
+
+var y =1;
+do{
+    var entrada = prompt("Diga as coordenadas");
+    var [A,B] = entrada.split(" ");
+    A = parseInt(A);
+    B = parseInt(B);
+    
+    if(A>0&&B>0){
+        console.log("primeiro");
+        y=1;
+    }
+    
+        if(A<0&&B>0){
+        console.log("segundo");
+        y=1;
+        }
+        
+        if(A<0&&B<0){
+        console.log("terceiro");
+        y=1;
+        }
+        
+        if(A>0&&B<0){
+        console.log("quarto");
+        y=1;
+        }
+        
+        if(A===0||B===0){
+            y=2;
+        }
+    
+} while(y==1);
